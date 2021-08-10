@@ -24,51 +24,60 @@ def predict(predict_sentence):
             logits = logits.detach().cpu().numpy()
 
             if np.argmax(logits) == 0:
-                test_eval.append("직원")
+                test_eval.append("응대 태도(불친절, 무관심등)")
             elif np.argmax(logits) == 1:
-                test_eval.append("시술")
+                test_eval.append("대기 불만(대기시간, 대기공간 등)")
             elif np.argmax(logits) == 2:
-                test_eval.append("대기")
+                test_eval.append("직원 기타")
             elif np.argmax(logits) == 3:
-                test_eval.append("시설")
+                test_eval.append("상담 불만(내용부족, 강요등)")
             elif np.argmax(logits) == 4:
-                test_eval.append("기타")
+                test_eval.append("기타(이벤트, 비용불만, 예약제 불만, 메일 오류등)")
             elif np.argmax(logits) == 5:
-                test_eval.append("수술")
+                test_eval.append("시술자 스킬부족")
             elif np.argmax(logits) == 6:
-                test_eval.append("시스템")
+                test_eval.append("환경기타")
+            elif np.argmax(logits) == 7:
+                test_eval.append("시술 후 멍, 통증 , 붓기 증상")
+            elif np.argmax(logits) == 8:
+                test_eval.append("시설 부족,불편(가운, 슬리퍼, 기타 용품등)")
+            elif np.argmax(logits) == 9:
+                test_eval.append("시술 후 결과 불만족,요요")
+            elif np.argmax(logits) == 10:
+                test_eval.append("주차 불편,불만")
+            elif np.argmax(logits) == 11:
+                test_eval.append("수술 후 효과 불만족(사이즈, 요요,체중등)")
+            elif np.argmax(logits) == 12:
+                test_eval.append("시술 기타")
+            elif np.argmax(logits) == 13:
+                test_eval.append("수술 후 부작용문의(뭉침, 착색,흉터)")
+            elif np.argmax(logits) == 14:
+                test_eval.append("청결,비위생")
+            elif np.argmax(logits) == 15:
+                test_eval.append("시술 후 부작용(착색 )")
+            elif np.argmax(logits) == 16:
+                test_eval.append("수술 기타")
+            elif np.argmax(logits) == 17:
+                test_eval.append("약처방")
+            elif np.argmax(logits) == 18:
+                test_eval.append("실천지수 누락")
+            elif np.argmax(logits) == 19:
+                test_eval.append("시술효과(시기)문의")
+            elif np.argmax(logits) == 20:
+                test_eval.append("수술 후 증상(멍,붓기,통증 )")
+            elif np.argmax(logits) == 21:
+                test_eval.append("수술 후 효과 시기 문의")
+            elif np.argmax(logits) == 22:
+                test_eval.append("압박복")
+            elif np.argmax(logits) == 23:
+                test_eval.append("마이홈차트(시술누락,사이즈누락)")
+            elif np.argmax(logits) == 24:
+                test_eval.append("주기적 ,목표체중 누락")
+            elif np.argmax(logits) == 25:
+                test_eval.append("다이어트메이트 누락")
+            elif np.argmax(logits) == 26:
+                test_eval.append("환불")
 
         print(">> 입력하신 내용은 " + test_eval[0] + " 관련입니다.")
         
         
-        
-'직원 기타': 0,
- '수술 후 효과 불만족(사이즈, 요요,체중등)': 1,
- '청결,비위생': 2,
- '압박복': 3,
- '마이홈챠트(인증누락,체성분누락)': 4,
- '실천지수 누락': 5,
- '마이홈차트(시술누락,사이즈누락)': 6,
- '약처방': 7,
- '수술 후 증상(멍,붓기,통증 )': 8,
- '시술 후 부작용(착색 )': 9,
- '다이어트메이트 누락': 10,
- '미키 만족도 체크 누락': 11,
- '시술효과(시기)문의': 12,
- '주기적 ,목표체중 누락': 13,
- '시술자 스킬부족': 14,
- '원칙 규정 불만 (지점이동,약관)': 15,
- '상담 불만(내용부족, 강요등)': 16,
- '기타(이벤트, 비용불만, 예약제 불만, 메일 오류등)': 17,
- '주차 불편,불만': 18,
- '환경기타': 19,
- '시설 부족,불편(가운, 슬리퍼, 기타 용품등)': 20,
- '수술 기타': 21,
- '응대 태도(불친절, 무관심등)': 22,
- '수술 후 효과 시기 문의': 23,
- '대기 불만(대기시간, 대기공간 등)': 24,
- '환불': 25,
- '시술 기타': 26,
- '시술 후 멍, 통증 , 붓기 증상': 27,
- '수술 후 부작용문의(뭉침, 착색,흉터)': 28,
- '시술 후 결과 불만족,요요': 29}
