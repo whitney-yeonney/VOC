@@ -4,6 +4,9 @@
 !pip install transformers==3.0.2
 !pip install torch
 
+
+!pip install git+https://git@github.com/SKTBrain/KoBERT.git@master
+
 bertmodel, vocab = get_pytorch_kobert_model()
 --------------------------------
 
