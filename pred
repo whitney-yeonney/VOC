@@ -1,3 +1,12 @@
+!pip install mxnet
+!pip install gluonnlp pandas tqdm
+!pip install sentencepiece
+!pip install transformers==3.0.2
+!pip install torch
+
+
+--------------------------------
+
 tokenizer = get_tokenizer()
 tok = nlp.data.BERTSPTokenizer(tokenizer, vocab, lower=False)
 
